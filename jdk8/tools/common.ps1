@@ -38,6 +38,7 @@ function download-from-oracle($url, $output_filename) {
         $client = New-Object Net.WebClient
         $dummy = $client.Headers.Add('Cookie', 'gpw_e24=http://www.oracle.com; oraclelicense=accept-securebackup-cookie')
         $dummy = $client.DownloadFile($url, $output_filename)
+        [System.Net.ServicePointManager]::ServerCertificateValidationCallback = $null
     }  
 }
 
