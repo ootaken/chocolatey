@@ -13,7 +13,7 @@
       changes:
       -8u92
     </releaseNotes>
-    <packageSourceUrl>https://chocolatey.org/packages/jdk8/</packageSourceUrl>
+    <packageSourceUrl>https://github.com/ootaken/chocolatey/tree/master/jdk8</packageSourceUrl>
     <description>By default this package installs JDK according to your platform (x86 or x64).
 
 If you want to install 32bits JDK on 64bits OS
