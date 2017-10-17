@@ -15,7 +15,7 @@ function use64bit($Forcei586 = $false) {
     $is64bitOS = Get-ProcessorBits 64
     return $is64bitOS
 }
- 
+
 function has_file($filename) {
     return Test-Path $filename
 }
