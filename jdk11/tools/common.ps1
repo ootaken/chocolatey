@@ -1,6 +1,6 @@
-﻿$jdk_version = '10.0.2'
+﻿$jdk_version = '11.0.1'
 $build = '13'
-$id = "19aef61b38124481863b1413dce1855f"
+$id = "90cf5d8f270a4347a95050320eef3fb7"
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
 function has_file($filename) {
@@ -112,7 +112,7 @@ function chocolatey-install($params) {
         $install_options += ',SourceFeature'
     }
     $install_options += '"'
-    Install-ChocolateyInstallPackage 'jdk10' 'exe' $install_options $jdk_file          
+    Install-ChocolateyInstallPackage 'jdk11' 'exe' $install_options $jdk_file          
 }
  
 function set-path() {

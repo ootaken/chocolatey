@@ -1,33 +1,33 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>jdk10</id>
+    <id>jdk11</id>
     <title>Java SE</title>
-    <version>10.0.2</version>
+    <version>11.0.1</version>
     <authors>Sun Microsystems/Oracle Corporation</authors>
     <owners>oota_ken</owners>
-    <summary>The Java Development Kit (JDK) version 10.0.2</summary>
+    <summary>The Java Development Kit (JDK) version 11.0.1</summary>
     <releaseNotes>
-      Java SE Development Kit 10.0.2
+      Java SE Development Kit 11.0.1
 
       changes:
-      -10.0.2
+      -11.0.1
 
     </releaseNotes>
-    <packageSourceUrl>https://chocolatey.org/packages/jdk10/</packageSourceUrl>
+    <packageSourceUrl>https://chocolatey.org/packages/jdk11/</packageSourceUrl>
     <description>By default this package installs JDK with source codes(zip).
 
 If you don't want to install source codes
 ```
-choco install jdk10 -params "source=false"
+choco install jdk11 -params "source=false"
 ```
 If you want auto update
 ```
-choco install jdk10 -params "static=false"
+choco install jdk11 -params "static=false"
 ```
 If you want to specfiy install directory (you need \\\\ for escape)
 ```
-choco install jdk10 -params 'installdir=c:\\java10'
+choco install jdk11 -params 'installdir=c:\\java11'
 ```
 </description>
     <projectUrl>http://www.oracle.com/technetwork/java/javase/downloads/index.html</projectUrl>
