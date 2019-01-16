@@ -1,8 +1,8 @@
-$jdk_version = '8u191'
-$build = '12'
-$java_version = "1.8.0_191"
-$uninstall_id = "180191"
-$id = "2787e4a523244c269598db4e85c51e0c"
+$jdk_version = '8u201'
+$build = '09'
+$java_version = "1.8.0_201"
+$uninstall_id = "180201"
+$id = "42970487e3af4f5aa5bca3f542482c60"
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
 function use64bit($Forcei586 = $false) {
