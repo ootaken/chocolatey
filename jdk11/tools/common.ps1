@@ -1,6 +1,6 @@
-﻿$jdk_version = '11.0.1'
-$build = '13'
-$id = "90cf5d8f270a4347a95050320eef3fb7"
+﻿$jdk_version = '11.0.2'
+$build = '7'
+$id = "f51449fcd52f4d52b93a989c5c56ed3c"
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
 function has_file($filename) {
