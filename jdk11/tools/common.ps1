@@ -1,5 +1,5 @@
 ﻿$jdk_version = '11.0.2'
-$build = '7'
+$build = '9'
 $id = "f51449fcd52f4d52b93a989c5c56ed3c"
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
