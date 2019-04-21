@@ -32,27 +32,7 @@ param(
   }
 }
  
-function Uninstall-JDK-And-JRE {
-    if (Test-Path (Join-Path $script_path "both.txt")) {
-        $jdk = "/qn /x {64A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "}"
-        Start-ChocolateyProcessAsAdmin $jdk 'msiexec'
-        #Start-ChocolateyProcessAsAdmin $jre 'msiexec'
-        $jdk = "/qn /x {32A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "}"
-        Start-ChocolateyProcessAsAdmin $jdk 'msiexec'
-        #Start-ChocolateyProcessAsAdmin $jre 'msiexec'
-    } else {
-        $use64bit = use64bit
-        if ($use64bit) {
-            $jdk = "/qn /x {64A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "}"
-        } else {
-            $jdk = "/qn /x {32A3A4F4-B792-11D6-A78A-00B0D0" + $uninstall_id + "}"
-        }
-        Start-ChocolateyProcessAsAdmin $jdk 'msiexec'
-    }
-}
-try {  
-  Uninstall-JDK-And-JRE
- 
+try {   
   $java_bin = get-java-bin
   Uninstall-ChocolateyPath $java_bin 'Machine'
   if ([Environment]::GetEnvironmentVariable('CLASSPATH','Machine') -eq '.;') {

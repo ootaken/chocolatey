@@ -3,15 +3,15 @@
   <metadata>
     <id>jdk11</id>
     <title>Java SE</title>
-    <version>11.0.2</version>
+    <version>11.0.2.9</version>
     <authors>Sun Microsystems/Oracle Corporation</authors>
     <owners>oota_ken</owners>
-    <summary>The Java Development Kit (JDK) version 11.0.2</summary>
+    <summary>The Java Development Kit (JDK) version 11.0.2.9</summary>
     <releaseNotes>
-      Java SE Development Kit 11.0.2
+      Java SE Development Kit 11.0.2 build 9
 
       changes:
-      -11.0.2
+      -11.0.2.9
 
     </releaseNotes>
     <packageSourceUrl>https://chocolatey.org/packages/jdk11/</packageSourceUrl>
