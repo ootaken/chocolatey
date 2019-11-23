@@ -34,7 +34,45 @@ function get-programfilesdir() {
 function download-from-oracle($url, $output_filename) {
     if (-not (has_file($output_fileName))) {
         Write-Host  "Downloading JDK from $url"
+
         $client = New-Object Net.WebClient
+
+        $defaultCreds = [System.Net.CredentialCache]::DefaultCredentials
+        if ($defaultCreds -ne $null) {
+            $client.Credentials = $defaultCreds
+        }
+
+        # Copy from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-WebFile.ps1
+        # check if a proxy is required
+        $explicitProxy = $env:chocolateyProxyLocation
+        $explicitProxyUser = $env:chocolateyProxyUser
+        $explicitProxyPassword = $env:chocolateyProxyPassword
+        if ($explicitProxy -ne $null) {
+            # explicit proxy
+            $proxy = New-Object System.Net.WebProxy($explicitProxy, $true)
+            if ($explicitProxyPassword -ne $null) {
+                $passwd = ConvertTo-SecureString $explicitProxyPassword -AsPlainText -Force
+                $proxy.Credentials = New-Object System.Management.Automation.PSCredential ($explicitProxyUser, $passwd)
+            }
+
+            Write-Host "Using explicit proxy server '$explicitProxy'."
+            $client.Proxy = $proxy
+
+        } elseif (!$client.Proxy.IsBypassed($url)) {
+            # system proxy (pass through)
+            $creds = [net.CredentialCache]::DefaultCredentials
+            if ($creds -eq $null) {
+                Write-Debug "Default credentials were null. Attempting backup method"
+                $cred = get-credential
+                $creds = $cred.GetNetworkCredential();
+            }
+            $proxyaddress = $client.Proxy.GetProxy($url).Authority
+            Write-Host "Using system proxy server '$proxyaddress'."
+            $proxy = New-Object System.Net.WebProxy($proxyaddress)
+            $proxy.Credentials = $creds
+            $client.Proxy = $proxy
+        }
+
         $dummy = $client.DownloadFile($url, $output_filename)
     }
 }
