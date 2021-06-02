@@ -1,7 +1,7 @@
 $jdk_version = '8u291'
 $build = '10'
 $java_version = "1.8.0_291"
-$uninstall_id = "180221"
+$uninstall_id = "180291"
 $id = "d7fc238d0cbf4b0dac67be84580cfb4b"
 
 $script_path = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
